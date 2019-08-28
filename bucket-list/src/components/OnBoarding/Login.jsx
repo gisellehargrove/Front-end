@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import TabBar from './TabBar';
 
 
 const useStyles = makeStyles(theme => ({
@@ -45,32 +46,36 @@ const Login = props => {
 
 
   return (
-    <div className={ classes.container }>
-      <Link to="/register">Register</Link>
-      <form onSubmit={ e => handleSubmit(e) }>
-        <TextField
-          id='username'
-          name='username'
-          label='Username'
-          className={ classes.textField }
-          onChange={ e => handleChange(e) }
-        />
-        <TextField
-          id='password'
-          name='password'
-          label='Password'
-          className={ classes.textField }
-          onChange={ e => handleChange(e) }
-        />
-        <Button
-          type='submit'
-          color='primary'
-          variant='contained'
-          className={ classes.button }
-        >
-          Log In
-        </Button>
-      </form>
+    <div className='login-page'>
+      <TabBar />
+
+      <div className={ classes.container }>
+        <Link to="/register">Register</Link>
+        <form onSubmit={ e => handleSubmit(e) }>
+          <TextField
+            id='username'
+            name='username'
+            label='Username'
+            className={ classes.textField }
+            onChange={ e => handleChange(e) }
+          />
+          <TextField
+            id='password'
+            name='password'
+            label='Password'
+            className={ classes.textField }
+            onChange={ e => handleChange(e) }
+          />
+          <Button
+            type='submit'
+            color='primary'
+            variant='contained'
+            className={ classes.button }
+          >
+            Log In
+          </Button>
+        </form>
+      </div>
     </div>
 
   )
