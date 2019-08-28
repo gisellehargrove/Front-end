@@ -25,6 +25,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Login = props => {
+
   const [creds, setCreds] = useState({
     username: '',
     password: ''
@@ -81,6 +82,7 @@ const Login = props => {
 };
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
     loginUser: state.loginUser
   }

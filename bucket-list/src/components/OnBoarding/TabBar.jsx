@@ -15,8 +15,8 @@ function a11yProps(index) {
   };
 };
 
-const TabBar = prop => {
-  const [value, setValue] = useState(0);
+const TabBar = props => {
+  const [value, setValue] = useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -25,18 +25,18 @@ const TabBar = prop => {
   return (
     <div>
       <AppBar position='static'>
-        <Tabs value={ value } onChange={ handleChange }>
+        <Tabs value={ value } onChange={ handleChange } centered>
           <Tab label='Register' {...a11yProps(0)} />
           <Tab label='Login' {...a11yProps(1)} />
         </Tabs>
 
       </AppBar>
       <TabPanel value={ value } index={ 0 }>
-        <RegisterWithFormik />
+        <RegisterWithFormik history={ props.history } />
       </TabPanel>
 
       <TabPanel value={ value } index={ 1 }>
-        <Login />
+        <Login history={ props.history } />
       </TabPanel>
     </div>
   )
