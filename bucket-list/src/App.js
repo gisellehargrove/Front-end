@@ -5,12 +5,13 @@ import Register from './components/OnBoarding/Register'
 import RegisterWithFormik from './components/OnBoarding/RegisterWithFormik'
 import BucketList from './components/Bucket/BucketList'
 import PrivateRoute from './components/OnBoarding/PrivateRoute'
+import TabBar from './components/OnBoarding/TabBar';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" component={Login} />
+      <Route exact path="/" component={TabBar} />
       <Route path="/register" component={RegisterWithFormik} />
       <PrivateRoute path="/home" component={BucketList} />
     </div>

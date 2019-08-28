@@ -23,12 +23,14 @@ const TabBar = prop => {
   };
 
   return (
-    <AppBar position='static'>
-      <Tabs value={ value } onChange={ handleChange }>
-        <Tab label='Register' {...a11yProps(0)} />
-        <Tab label='Login' {...a11yProps(1)} />
-      </Tabs>
+    <div>
+      <AppBar position='static'>
+        <Tabs value={ value } onChange={ handleChange }>
+          <Tab label='Register' {...a11yProps(0)} />
+          <Tab label='Login' {...a11yProps(1)} />
+        </Tabs>
 
+      </AppBar>
       <TabPanel value={ value } index={ 0 }>
         <RegisterWithFormik />
       </TabPanel>
@@ -36,7 +38,7 @@ const TabBar = prop => {
       <TabPanel value={ value } index={ 1 }>
         <Login />
       </TabPanel>
-    </AppBar>
+    </div>
   )
 };
 
